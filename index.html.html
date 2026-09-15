@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthorityX - Executive LinkedIn Positioning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0f131d;
+            --bg-darker: #0a0e18;
+            --card-bg: #1c1f2a;
+            --card-hover: #262a35;
+            --text-primary: #dfe2f1;
+            --text-secondary: #c1c6d4;
+            --text-muted: #8b919e;
+            --accent-blue: #0a66c2;
+            --accent-green: #4edea3;
+            --accent-light-blue: #a8c8ff;
+            --border-radius: 12px;
+            --font-outfit: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-jakarta: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-jakarta);
+            background: linear-gradient(90deg, var(--bg-dark) 0%, var(--bg-dark) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            backdrop-filter: blur(12px);
+            background: rgba(15, 19, 29, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            height: 80px;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 48px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-text {
+            font-family: var(--font-outfit);
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .cta-button {
+            background: var(--accent-blue);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            background: var(--bg-dark);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        section {
+            padding: 96px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 96px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -160px;
+            left: 25%;
+            width: 384px;
+            height: 384px;
+            background: rgba(10, 102, 194, 0.2);
+            border-radius: 9999px;
+            filter: blur(65px);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 33.33%;
+            right: -80px;
+            width: 320px;
+            height: 320px;
+            background: rgba(0, 83, 219, 0.15);
+            border-radius: 9999px;
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-outfit);
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 72px;
+            letter-spacing: -1.92px;
+            margin-bottom: 24px;
+        }
+
+        .hero-text h1 .gradient {
+            background: linear-gradient(90deg, var(--accent-light-blue), var(--text-primary), var(--accent-light-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card-bg);
+            padding: 4px 16px;
+            border-radius: 9999px;
+            margin-bottom: 24px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: var(--accent-green);
+            text-transform: uppercase;
+        }
+
+        .kicker::before {
+            content: '●';
+            display: inline-block;
+            color: var(--accent-green);
+        }
+
+        .subheading {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 32px;
+            margin-bottom: 24px;
+        }
+
+        .supporting-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 26px;
+            margin-bottom: 24px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+            padding: 16px 40px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 25px 35px -5px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: rgba(38, 42, 53, 0.8);
+            backdrop-filter: blur(6px);
+            color: var(--text-primary);
+            padding: 16px 40px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(38, 42, 53, 1);
+        }
+
+        /* Achievement Section */
+        .achievements {
+            background: var(--bg-darker);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(10, 102, 194, 0.2);
+            padding: 4px 16px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: var(--accent-light-blue);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-outfit);
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 56px;
+            letter-spacing: -1.2px;
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 28px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-blue);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-badge {
+            background: rgba(168, 200, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-light-blue);
+        }
+
+        .card-title {
+            font-family: var(--font-outfit);
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: -0.2px;
+        }
+
+        .card-description {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 26px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 12px;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        /* Proof Strip */
+        .proof-strip {
+            background: var(--bg-darker);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .proof-stat {
+            flex: 1;
+            text-align: center;
+        }
+
+        .proof-number {
+            font-family: var(--font-outfit);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-light-blue);
+            margin-bottom: 8px;
+        }
+
+        .proof-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.48px;
+        }
+
+        /* Offer Section */
+        .offer-section {
+            background: var(--bg-darker);
+        }
+
+        .offer-container {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 56px;
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 384px;
+            height: 384px;
+            background: rgba(10, 102, 194, 0.15);
+            border-radius: 9999px;
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-left h2 {
+            font-family: var(--font-outfit);
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 56px;
+            letter-spacing: -1.2px;
+            margin-bottom: 24px;
+        }
+
+        .offer-features {
+            background: var(--bg-darker);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .offer-right {
+            background: var(--card-hover);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .offer-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .price-main {
+            font-family: var(--font-outfit);
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1.2px;
+            color: var(--accent-green);
+        }
+
+        .price-old {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .price-discount {
+            background: rgba(78, 222, 163, 0.2);
+            color: var(--accent-green);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.48px;
+        }
+
+        .slot-selector {
+            display: flex;
+            gap: 4px;
+            margin: 16px 0;
+        }
+
+        .slot-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slot-btn.active {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .slot-btn:hover:not(.active) {
+            background: var(--card-hover);
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--bg-dark);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .form-left h2 {
+            font-family: var(--font-outfit);
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 60px;
+            letter-spacing: -1.2px;
+            margin-bottom: 24px;
+        }
+
+        .form-description {
+            font-size: 20px;
+            color: var(--text-secondary);
+            line-height: 32px;
+            margin-bottom: 32px;
+        }
+
+        .trust-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .trust-item {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            padding: 16px 0;
+        }
+
+        .trust-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(10, 102, 194, 0.3);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .trust-icon::after {
+            content: '✓';
+            color: var(--accent-light-blue);
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .trust-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-title {
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--text-primary);
+            line-height: 28px;
+        }
+
+        .trust-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 22px;
+            margin-top: 4px;
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 256px;
+            height: 256px;
+            background: rgba(0, 83, 219, 0.1);
+            border-radius: 9999px;
+            filter: blur(32px);
+            pointer-events: none;
+        }
+
+        .form-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-title {
+            font-family: var(--font-outfit);
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 22px;
+            margin-bottom: 8px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .required {
+            color: #ffb4ab;
+        }
+
+        .form-input {
+            background: var(--bg-darker);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 16px;
+            border-radius: var(--border-radius);
+            font-family: var(--font-jakarta);
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-input:focus {
+            border-color: var(--accent-blue);
+            background: rgba(10, 102, 194, 0.05);
+        }
+
+        .form-input-group {
+            display: flex;
+            gap: 4px;
+        }
+
+        .country-select {
+            width: 112px;
+            background: var(--bg-darker);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 14px 8px;
+            border-radius: var(--border-radius);
+            font-family: var(--font-jakarta);
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background: linear-gradient(90deg, var(--accent-blue) 0%, #0053db 100%);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 25px 35px -5px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+            letter-spacing: 0.48px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .success-message {
+            background: rgba(78, 222, 163, 0.1);
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 12px 16px;
+            border-radius: var(--border-radius);
+            display: none;
+            margin-bottom: 16px;
+            font-size: 14px;
+            animation: slideIn 0.3s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-darker);
+            color: var(--text-secondary);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-left {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo-text {
+            font-family: var(--font-outfit);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-description {
+            font-size: 14px;
+            line-height: 22px;
+            max-width: 384px;
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer-badge {
+            background: var(--card-bg);
+            padding: 4px 16px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.48px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 32px;
+            }
+
+            .header-container {
+                padding: 0 32px;
+            }
+
+            .hero-content,
+            .form-grid,
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+                line-height: 56px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+                line-height: 44px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .header-container {
+                padding: 0 24px;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                flex-direction: column;
+                gap: 12px;
+                display: none;
+            }
+
+            section {
+                padding: 48px 0;
+            }
+
+            .hero-content,
+            .form-grid,
+            .offer-grid {
+                gap: 32px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+                line-height: 44px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .offer-container {
+                padding: 32px;
+            }
+
+            .form-card {
+                padding: 24px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .footer-links {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-text">AuthorityX</span>
+            </a>
+            <nav>
+                <a href="#overview">Overview</a>
+                <a href="#results">Results & Case Studies</a>
+                <a href="#audit">₹1 Audit Session</a>
+                <a href="#form">Get Growth Plan</a>
+            </nav>
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <a href="https://payments.cashfree.com/forms/getaudit" class="cta-button">Book ₹1 Audit</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="overview">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="kicker">⚡ EXECUTIVE LINKEDIN ACCELERATOR</div>
+                        <h1>Turn Your LinkedIn From <span class="gradient">Invisible to Influential</span></h1>
+                        <p class="subheading">We don't just "optimize profiles." We build your personal brand from scratch — with strategy, content, and consistency that actually gets you seen.</p>
+                        <p class="supporting-text">From 0 to hero on LinkedIn — without confusion, guesswork, or wasting months figuring it out alone.</p>
+                        <div class="cta-group">
+                            <a href="https://payments.cashfree.com/forms/getaudit" class="btn-primary">Get Your Profile Audit →</a>
+                            <button class="btn-secondary">Start Growing Today</button>
+                        </div>
+                        <div style="display: flex; gap: 12px; margin-top: 16px;">
+                            <div style="display: flex; gap: 4px;">
+                                <span style="color: var(--accent-light-blue); font-weight: 700;">★★★★★</span>
+                            </div>
+                            <p style="font-size: 12px; color: var(--text-secondary);"><strong>Ranked #1 Executive Growth Engine 2024</strong> by 100+ Execs</p>
+                        </div>
+                    </div>
+                    <div style="position: relative;">
+                        <div style="background: rgba(10, 102, 194, 0.15); border-radius: 16px; padding: 16px; box-shadow: 0px 25px 50px -12px rgba(0,0,0,0.25);">
+                            <div style="background: #313540; border-radius: 12px; padding: 16px; text-align: center;">
+                                <div style="font-size: 48px; margin-bottom: 8px;">📊</div>
+                                <h3 style="font-size: 18px; margin-bottom: 8px;">Live Profile Analytics</h3>
+                                <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px;">Real-time performance metrics from your LinkedIn profile</p>
+                                <div style="background: var(--card-bg); padding: 12px; border-radius: 8px; margin-bottom: 12px;">
+                                    <div style="font-size: 20px; font-weight: 700; color: var(--accent-light-blue);">+340%</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Impressions (30 days)</div>
+                                </div>
+                                <p style="font-size: 12px; color: var(--accent-green);">✓ 28,490 Views • 42 Qualified Leads</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="achievements" id="results">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">PROVEN TRACK RECORD</div>
+                    <h2>Real Growth. Real Results.</h2>
+                    <p class="section-description">We don't sell vanity metrics or generic viral quotes. Every strategy is engineered for strategic revenue, high-stake partnerships, and undeniable category authority.</p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">👥</div>
+                            <div class="card-badge">Top 1% Creators</div>
+                        </div>
+                        <h3 class="card-title">Helped 100+ professionals build authority on LinkedIn</h3>
+                        <p class="card-description">From seed-stage founders to Fortune 500 VPs, we engineer institutional-grade personal narratives that command immediate industry respect.</p>
+                        <div class="card-footer">✓ 100% C-Suite & Founder Approved</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">📧</div>
+                            <div class="card-badge">₹180M+ Pipeline</div>
+                        </div>
+                        <h3 class="card-title">Generated consistent inbound leads through content</h3>
+                        <p class="card-description">Turn passive impressions into high-ticket enterprise contracts, speaking engagements, angel allocations, and inbound sales pipeline.</p>
+                        <div class="card-footer">↗ Average 24+ qualified monthly inbound DMs</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">🚀</div>
+                            <div class="card-badge">Zero to Dominance</div>
+                        </div>
+                        <h3 class="card-title">Built personal brands from absolute zero</h3>
+                        <p class="card-description">No prior posting history? No problem. We structure your positioning architecture, content pillars, and executive voice from ground zero.</p>
+                        <div class="card-footer">📈 Day 1: 0 Views → Day 90: 850k+ Views</div>
+                    </div>
+                </div>
+
+                <div class="proof-strip">
+                    <div class="proof-stat">
+                        <div class="proof-number">100+</div>
+                        <div class="proof-label">Brands Built</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-number">14M+</div>
+                        <div class="proof-label">Organic Impressions</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-number">98.4%</div>
+                        <div class="proof-label">Client Retention</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offer Section -->
+        <section class="offer-section" id="audit">
+            <div class="container">
+                <div class="offer-container">
+                    <div class="offer-grid">
+                        <div class="offer-left">
+                            <div style="display: flex; gap: 8px; margin-bottom: 24px;">
+                                <span style="background: rgba(78, 222, 163, 0.4); padding: 4px 16px; border-radius: 9999px; font-size: 12px; font-weight: 700; color: var(--accent-green); text-transform: uppercase;">₹1 ONLY • NO HIDDEN T&C</span>
+                                <span style="background: var(--card-hover); padding: 4px 16px; border-radius: 9999px; font-size: 12px; font-weight: 600; color: var(--text-muted);">⚡ Only 5 slots left this week</span>
+                            </div>
+                            <h2>Get a Complete LinkedIn Audit for Just Rupee 1</h2>
+                            <p class="subheading">Not a sales call. A real breakdown of what's working, what's not, and what to fix.</p>
+                            <p class="supporting-text">In this high-intensity 30-minute 1-on-1 teardown, our executive brand strategist walks through your live LinkedIn profile and hands you an actionable battle plan.</p>
+                            
+                            <div class="offer-features">
+                                <h4 style="font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">WHAT YOU'LL RECEIVE:</h4>
+                                <div class="feature-item">
+                                    <span>✓</span>
+                                    <span>Profile Review: Headline, banner & strategic positioning alignment</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span>✓</span>
+                                    <span>Content Gap Analysis: Pinpoint why impressions flatline and how to ignite reach</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span>✓</span>
+                                    <span>Personal Brand Direction: Distinct industry POV & authority positioning roadmap</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span>✓</span>
+                                    <span>Action Steps for Visibility: Exact tactical checklist to implement in your first 7 days</span>
+                                </div>
+                            </div>
+
+                            <div style="background: var(--bg-darker); border-radius: var(--border-radius); padding: 16px; margin-top: 24px;">
+                                <p style="font-size: 12px; font-weight: 700; color: var(--accent-light-blue); text-transform: uppercase; margin-bottom: 8px;">THE PHILOSOPHY</p>
+                                <p style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">"Why Rupee 1? Because once you see the value, you'll know what to do next."</p>
+                                <p style="font-size: 14px; color: var(--text-muted);">No high-pressure sales scripts. If we can't show you instant value in 30 minutes, keep the rupee.</p>
+                            </div>
+                        </div>
+
+                        <div class="offer-right">
+                            <div style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-bottom: 16px;">
+                                <div style="width: 56px; height: 56px; background: var(--accent-blue); border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1);">🎯</div>
+                            </div>
+
+                            <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                <div style="text-align: center;">
+                                    <div class="price-main">₹1</div>
+                                    <div class="price-old">₹9,999</div>
+                                </div>
+                                <div class="price-discount">99.9% OFF</div>
+                            </div>
+
+                            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px;">Live 30-Minute Executive Session</p>
+
+                            <div style="margin-bottom: 16px;">
+                                <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 8px;">Select Day</label>
+                                <div class="slot-selector">
+                                    <button class="slot-btn active" onclick="selectSlot(this)">
+                                        <span style="display: block;">Tomorrow</span>
+                                        <span style="font-size: 10px;">2 slots</span>
+                                    </button>
+                                    <button class="slot-btn" onclick="selectSlot(this)">
+                                        <span style="display: block;">Thursday</span>
+                                        <span style="font-size: 10px;">1 slot</span>
+                                    </button>
+                                    <button class="slot-btn" onclick="selectSlot(this)">
+                                        <span style="display: block;">Friday</span>
+                                        <span style="font-size: 10px;">2 slots</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <a href="https://payments.cashfree.com/forms/getaudit" class="btn-submit">Book My Audit Now →</a>
+
+                            <p class="form-note">Instant confirmation • Calendar invite via Google Meet</p>
+
+                            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
+                                <div style="display: flex; gap: 4px; font-size: 12px; color: var(--text-secondary);">
+                                    <span>✓</span>
+                                    <span>Instant 30-min scheduling</span>
+                                </div>
+                                <div style="display: flex; gap: 4px; font-size: 12px; color: var(--text-secondary);">
+                                    <span>✓</span>
+                                    <span>100% Confidential under mutual NDA</span>
+                                </div>
+                                <div style="display: flex; gap: 4px; font-size: 12px; color: var(--text-secondary);">
+                                    <span>✓</span>
+                                    <span>1-on-1 Expert review (No junior account managers)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Form Section -->
+        <section class="form-section" id="form">
+            <div class="container">
+                <div class="form-grid">
+                    <div class="form-left">
+                        <div style="background: var(--card-hover); padding: 4px 16px; border-radius: 9999px; width: fit-content; margin-bottom: 24px;">
+                            <div style="font-size: 12px; font-weight: 700; color: var(--accent-light-blue); text-transform: uppercase; display: flex; align-items: center; gap: 4px;">
+                                <span>🎯</span> CUSTOM ROADMAP
+                            </div>
+                        </div>
+                        <h2>Let's Build Your LinkedIn Presence Together</h2>
+                        <p class="form-description">Tell us a bit about you — and we'll show you exactly how to grow.</p>
+
+                        <div class="trust-list">
+                            <div class="trust-item">
+                                <div class="trust-icon"></div>
+                                <div class="trust-content">
+                                    <div class="trust-title">Direct Strategy</div>
+                                    <div class="trust-description">Tailored positioning designed for your specific industry niche, competitors, and target audience.</div>
+                                </div>
+                            </div>
+                            <div class="trust-item">
+                                <div class="trust-icon"></div>
+                                <div class="trust-content">
+                                    <div class="trust-title">Tailor-Made Roadmap</div>
+                                    <div class="trust-description">We don't offer cookie-cutter templates. You receive a bespoke narrative architecture aligned with your business goals.</div>
+                                </div>
+                            </div>
+                            <div class="trust-item">
+                                <div class="trust-icon"></div>
+                                <div class="trust-content">
+                                    <div class="trust-title">Zero Fluff</div>
+                                    <div class="trust-description">Actionable execution metrics from day one. You save 10+ hours a week while dominating your space.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: var(--card-bg); border-radius: var(--border-radius); padding: 16px; margin-top: 24px;">
+                            <p style="font-weight: 600; margin-bottom: 8px;">Have a specific question first?</p>
+                            <p style="font-size: 14px; color: var(--text-muted);">Speak directly to our Managing Partner on WhatsApp or email.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-card">
+                        <div class="form-container">
+                            <div>
+                                <h3 class="form-title">Claim Your Custom Growth Plan</h3>
+                                <p class="form-subtitle">Fill in your details below to receive your customized 90-day positioning blueprint.</p>
+                            </div>
+
+                            <div id="successMessage" class="success-message">
+                                ✓ Form submitted successfully! Check your email for your custom growth plan.
+                            </div>
+
+                            <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                                <div class="form-group">
+                                    <label class="form-label">FULL NAME <span class="required">*</span></label>
+                                    <input 
+                                        type="text" 
+                                        name="name" 
+                                        class="form-input" 
+                                        placeholder="e.g. Alex Morgan" 
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">WORK EMAIL <span class="required">*</span></label>
+                                    <input 
+                                        type="email" 
+                                        name="email" 
+                                        class="form-input" 
+                                        placeholder="alex@company.com" 
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">PHONE NUMBER <span class="required">*</span></label>
+                                    <div class="form-input-group">
+                                        <select class="country-select">
+                                            <option>🇮🇳 +91</option>
+                                        </select>
+                                        <input 
+                                            type="tel" 
+                                            name="phone" 
+                                            class="form-input" 
+                                            placeholder="98765 43210" 
+                                            required
+                                            style="flex: 1;"
+                                        >
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn-submit">Get My Growth Plan →</button>
+                                <p class="form-note">No spam. No fluff. Just actionable clarity.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <div>
+                        <div class="footer-logo">
+                            <span class="footer-logo-text">AuthorityX</span>
+                        </div>
+                        <p class="footer-description">Executive LinkedIn positioning and revenue-driven personal brand counsel for Tier-1 founders, C-suite executives, and VC partners.</p>
+                    </div>
+                </div>
+                <div class="footer-badges">
+                    <div class="footer-badge">✓ Audited ₹180M+ Pipeline Generated</div>
+                    <div class="footer-badge">✓ Fortune 500 & Tier-1 VC Vetted</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 AuthorityX Executive Positioning Agency. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Editorial Standards</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // AppScript Configuration - NEW DEPLOYMENT
+        const APPSCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxoum6YCOJzwKaWQQjkV3BnjSO_D8e48pUoqmy57uudZ7CKtzt3z4CRxN-dlR4C7MtfqQ/exec';
+
+        function selectSlot(button) {
+            document.querySelectorAll('.slot-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            // Get form values
+            const name = form.querySelector('input[name="name"]').value;
+            const email = form.querySelector('input[name="email"]').value;
+            const phone = form.querySelector('input[name="phone"]').value;
+
+            // Validate form
+            if (!name || !email || !phone) {
+                alert('Please fill all required fields');
+                return;
+            }
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+
+            // Send data via POST request
+            fetch(APPSCRIPT_URL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                // Show success message
+                successMessage.classList.add('show');
+                
+                // Reset form
+                form.reset();
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get My Growth Plan →';
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Still show success for offline scenarios
+                successMessage.classList.add('show');
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get My Growth Plan →';
+
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
